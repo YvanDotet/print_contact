@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<odoo>
+	<record id="module_extend_sales_category" model="ir.module.category">
+		<field name="name">Extend sales</field>
+	</record>
+	
+	<!-- Library User Group -->
+	<record id="group_sale_line_order" model="res.groups">
+		<field name="name">ManageDelete</field>
+		<field name="category_id" ref="module_extend_sales_category"/>
+		<field name="users" eval="[(4,ref('base.user_root')),(4,ref('base.user_admin'))]"/>		
+	</record>
+</odoo>
