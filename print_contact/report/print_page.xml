@@ -39,7 +39,7 @@
 					<table>
 						<tr>
 							<td>
-								<span t-field="contact.image_medium" t-options="{'widget':'image'}" style="opacity:1"/>
+								<span t-field="contact.image_1920" t-options="{'widget':'image'}" style="opacity:1"/>
 							</td>
 							
 							<td>
