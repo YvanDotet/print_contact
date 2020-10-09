@@ -1,5 +1,4 @@
 from odoo import api,fields,models
-from odoo.exceptions import Warning,ValidationError,UserError
 
 
 class extend_contact(models.Model):
