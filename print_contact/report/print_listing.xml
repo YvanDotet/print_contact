@@ -14,15 +14,14 @@
 		<field name="dpi">90</field>
 	</record>
 
-	<report
-		id="action_report_listing"
-		string="List of contacts"
-		model="res.partner"
-		report_type="qweb-pdf"
-		name="print_contact.listing"
-		print_report_name="'Contact Listing'"
-		paperformat="paperformat_listing"
-	/>
+	<record id="action_report_listing" model="ir.actions.report">
+		<field name="name">List of contacts</field>
+		<field name="model">res.partner</field>
+		<field name="report_name">print_contact.listing</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="paperformat_id" ref="paperformat_listing"/>
+		<field name="binding_model_id" ref="model_res_partner"/>
+	</record>
 	
 	<template id="listing">
 
