@@ -14,15 +14,14 @@
 		<field name="dpi">90</field>
 	</record>
 
-	<report
-		id="action_report_page"
-		string="Full Page"
-		model="res.partner"
-		report_type="qweb-pdf"
-		name="print_contact.page"
-		print_report_name="'Contact page'"
-		paperformat="paperformat_page"
-	/>
+	<record id="action_report_page" model="ir.actions.report">
+		<field name="name">Full Page</field>
+		<field name="model">res.partner</field>
+		<field name="report_name">print_contact.page</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="paperformat_id" ref="paperformat_page"/>
+		<field name="binding_model_id" ref="model_res_partner"/>
+	</record>
 	
 	<template id="page">
 
