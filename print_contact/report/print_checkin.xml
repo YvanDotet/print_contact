@@ -14,15 +14,14 @@
 		<field name="dpi">90</field>
 	</record>
 
-	<report
-		id="action_report_checkin"
-		string="Check-in contacts"
-		model="res.partner"
-		report_type="qweb-pdf"
-		name="print_contact.checkin"
-		print_report_name="'Check-in Contacts'"
-		paperformat="paperformat_checkin"
-	/>
+	<record id="action_report_checkin" model="ir.actions.report">
+		<field name="name">Check-in contacts</field>
+		<field name="model">res.partner</field>
+		<field name="report_name">print_contact.checkin</field>
+		<field name="report_type">qweb-pdf</field>
+		<field name="paperformat_id" ref="paperformat_checkin"/>
+		<field name="binding_model_id" ref="model_res_partner"/>
+	</record>
 	
 	<template id="checkin">
 
