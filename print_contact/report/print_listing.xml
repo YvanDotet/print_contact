@@ -19,12 +19,11 @@
         <field name="model">res.partner</field>
         <field name="report_name">print_contact.listing</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="paperformat_id" ref="paperformat_listing"/>
-		<field name="binding_model_id" ref="model_res_partner"/>
+        <field name="paperformat_id" ref="print_contact.paperformat_listing"/>
+		<field name="binding_model_id" ref="base.model_res_partner"/>
     </record>
 	
 	<template id="listing">
-
 		<t t-call="web.html_container">
 			<t t-set="dateImpression" t-value="{
 			'jour':context_timestamp(datetime.datetime.now()).strftime('%d %B %Y'),
@@ -86,8 +85,7 @@
 				</div>
 			</div>
 			
-		</t>		
-
+		</t>
 	</template>
 	
 </odoo>

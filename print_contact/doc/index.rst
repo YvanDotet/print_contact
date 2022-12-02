@@ -2,13 +2,13 @@
 print_contact
 ==============
 
-This module is usefull to print the list of your contacts, check-in reports or full-pages that describe your clients.
+This module is useful to print the list of your contacts, check-in reports or full-pages that describe your clients.
 
 Usage
 =====
 Go to "Settings" - Apps without any filters. Type "print_contact" into the search box.
 
-Odoo version 15
+Odoo version 16
 
 Credits
 =======
