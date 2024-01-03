@@ -109,7 +109,7 @@
 
 				<div class="footer text-center">
 					<div t-if="report_type == 'pdf'">
-						Page : <t t-esc="1+contact_index"/> sur <t t-esc="len(docs)"/>
+						Page : <t t-esc="1+contact_index"/> on <t t-esc="len(docs)"/>
 					</div>
 				</div>
 				
