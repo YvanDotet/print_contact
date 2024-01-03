@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* print_contact
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-03 22:24+0000\n"
+"PO-Revision-Date: 2024-01-03 22:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.checkin
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "( Company )"
+msgstr "( Société )"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Address"
+msgstr "Adresse"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.buttons
+msgid "Check-in Contacts"
+msgstr ""
+
+#. module: print_contact
+#: model:ir.actions.report,name:print_contact.action_report_checkin
+msgid "Check-in contacts"
+msgstr ""
+
+#. module: print_contact
+#: model:ir.model,name:print_contact.model_res_partner
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Contact"
+msgstr ""
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Email :"
+msgstr ""
+
+#. module: print_contact
+#: model:ir.actions.report,name:print_contact.action_report_page
+#: model_terms:ir.ui.view,arch_db:print_contact.buttons
+msgid "Full Page"
+msgstr "Page complète"
+
+#. module: print_contact
+#: model:ir.actions.report,name:print_contact.action_report_listing
+#: model_terms:ir.ui.view,arch_db:print_contact.buttons
+msgid "List of contacts"
+msgstr "Liste de contacts"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Mobile :"
+msgstr ""
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "Name"
+msgstr "Nom"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Page :"
+msgstr ""
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.checkin
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "Page : <span class=\"page\"/> on <span class=\"topage\"/>"
+msgstr "Page : <span class=\"page\"/> sur <span class=\"topage\"/>"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "Phone :"
+msgstr "Téléphone :"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.checkin
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "Print the"
+msgstr "Imprimer le"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.checkin
+msgid "Signature"
+msgstr ""
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.checkin
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "by"
+msgstr "par"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.page
+msgid "on"
+msgstr "le"
