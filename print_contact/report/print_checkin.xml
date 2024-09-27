@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<record id="paperformat_checkin" model="report.paperformat">
-		<field name="name">format - Contact Check-in</field>
+		<field name="name">Contact Check-in</field>
 		<field name="default" eval="True"/>
 		<field name="format">A4</field>
 		<field name="orientation">Portrait</field>
@@ -14,6 +14,54 @@
 		<field name="dpi">90</field>
 	</record>
 
+	<template id="checkin">
+		<t t-call="web.html_container">
+			<t t-set="dateImpression" t-value="{
+			'day':context_timestamp(datetime.datetime.now()).strftime('%d %B %Y'),
+			'hour':context_timestamp(datetime.datetime.now()).strftime('%H:%M:%S'),
+			'author':user.name
+			}"/>
+
+			<div class="header"/>
+
+			<div class="article">
+				<div class="page">
+					<div style="text-align:right">
+						Print the <t t-out="dateImpression['day']"/> by <t t-out="dateImpression['author']"/>
+					</div>
+
+					<t t-foreach="docs" t-as="contact">
+						<table style="border:1px dashed;width:100%;table-layout:fixed">
+							<tr>
+								<td style="width:80%;font-size:40px">
+									<ul style="list-style:none">
+										<li>
+											<t t-if="contact.company_type=='person'" t-out="contact.title.name"/> <t t-out="contact.name"/>
+										</li>
+
+										<li t-if="contact.company_type=='company'">( Company )</li>
+									</ul>
+
+								</td>
+
+								<td style="border:4px double">
+									Signature
+								</td>
+							</tr>
+						</table>
+						<br/>
+					</t>
+				</div>
+			</div>
+
+			<div class="footer text-center">
+				<div t-if="report_type == 'pdf'">
+					Page : <span class="page"/> on <span class="topage"/>
+				</div>
+			</div>
+		</t>
+	</template>
+
 	<record id="action_report_checkin" model="ir.actions.report">
         <field name="name">Check-in contacts</field>
         <field name="model">res.partner</field>
@@ -22,52 +70,4 @@
 		<field name="paperformat_id" ref="print_contact.paperformat_checkin"/>
 		<field name="binding_model_id" ref="base.model_res_partner"/>
 	</record>
-
-	<template id="checkin">
-		<t t-call="web.html_container">
-			<t t-set="dateImpression" t-value="{
-			'jour':context_timestamp(datetime.datetime.now()).strftime('%d %B %Y'),
-			'heure':context_timestamp(datetime.datetime.now()).strftime('%H:%M:%S'),
-			'auteur':user.name
-			}"/>
-					
-			<div class="article">
-				<div style="text-align:right">
-					Print the <t t-esc="dateImpression['jour']"/> by <t t-esc="dateImpression['auteur']"/>
-				</div>
-
-				<t t-foreach="docs" t-as="contact">										
-					
-					<table style="border:1px dashed;width:100%;table-layout:fixed">
-						<tr>
-							<td style="width:80%;font-size:40px">
-								<ul style="list-style:none">
-									<li>
-										<t t-if="contact.company_type=='person'" t-esc="contact.title.name"/> <t t-esc="contact.name"/>
-									</li>
-									
-									<li t-if="contact.company_type=='company'">( Company )</li>
-								</ul>
-								
-							</td>
-							
-							<td style="border:4px double;vertical-align:top">
-								Signature
-							</td>
-						</tr>
-					</table>
-					<br/>
-					
-				</t>
-			</div>
-					
-			<div class="footer text-center">
-				<div t-if="report_type == 'pdf'">
-					Page : <span class="page"/> on <span class="topage"/>
-				</div>
-			</div>
-			
-		</t>
-	</template>
-	
 </odoo>

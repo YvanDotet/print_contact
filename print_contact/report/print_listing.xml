@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<record id="paperformat_listing" model="report.paperformat">
-		<field name="name">format - Contact Listing</field>
+		<field name="name">Contact Listing</field>
 		<field name="default" eval="True"/>
 		<field name="format">A4</field>
 		<field name="orientation">Portrait</field>
@@ -14,6 +14,70 @@
 		<field name="dpi">90</field>
 	</record>
 
+	<template id="listing">
+		<t t-call="web.html_container">
+			<t t-set="dateImpression" t-value="{
+			'day':context_timestamp(datetime.datetime.now()).strftime('%d %B %Y'),
+			'hour':context_timestamp(datetime.datetime.now()).strftime('%H:%M:%S'),
+			'author':user.name
+			}"/>
+
+			<div class="header"/>
+
+			<div class="article">
+				<div class="page">
+					<div style="text-align:right">
+						Print the <t t-out="dateImpression['day']"/> by <t t-out="dateImpression['author']"/>
+					</div>
+
+					<table style="width:100%">
+						<thead>
+							<tr style="border-bottom:4px double black">
+								<th>N°</th>
+								<th>Name</th>
+								<th>Contact</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<t t-foreach="docs.sorted(key=lambda c:c.name)" t-as="contact">
+								<tr t-att-style='"background-color: {0}".format("white" if contact_index%2==0 else "#c9e4f6")'>
+									<td style="padding-right:4px">
+										<t t-out="1+contact_index"/> -
+									</td>
+
+									<td style="white-space: nowrap">
+										<t t-out="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
+									</td>
+
+									<td>
+
+										<ul>
+											<t t-foreach="['phone','mobile','email']" t-as="key">
+												<t t-if="key in contact._fields">
+													<li t-if="contact[key]">
+														<t t-out="contact[key]"/>
+													</li>
+												</t>
+											</t>
+										</ul>
+
+									</td>
+								</tr>
+							</t>
+						</tbody>
+					</table>
+				</div>
+			</div>
+					
+			<div class="footer text-center">
+				<div t-if="report_type == 'pdf'">
+					Page : <span class="page"/> on <span class="topage"/>
+				</div>
+			</div>
+		</t>
+	</template>
+
 	<record id="action_report_listing" model="ir.actions.report">
         <field name="name">List of contacts</field>
         <field name="model">res.partner</field>
@@ -22,70 +86,4 @@
         <field name="paperformat_id" ref="print_contact.paperformat_listing"/>
 		<field name="binding_model_id" ref="base.model_res_partner"/>
     </record>
-	
-	<template id="listing">
-		<t t-call="web.html_container">
-			<t t-set="dateImpression" t-value="{
-			'jour':context_timestamp(datetime.datetime.now()).strftime('%d %B %Y'),
-			'heure':context_timestamp(datetime.datetime.now()).strftime('%H:%M:%S'),
-			'auteur':user.name
-			}"/>
-			
-			<t t-set="keys" t-value="['phone','mobile','email']"/>
-		
-			<div class="article">
-				<div style="text-align:right">
-					Print the <t t-esc="dateImpression['jour']"/> by <t t-esc="dateImpression['auteur']"/>
-				</div>
-				
-				<table style="width:100%">
-					<thead>
-						<tr style="border-bottom:4px double black">
-							<th>N°</th>
-							<th>Name</th>
-							<th>Contact</th>
-						</tr>
-					</thead>
-					
-					<tbody>
-						<t t-foreach="docs.sorted(key=lambda c:c.name)" t-as="contact">						
-							
-							<tr t-att-style="'background-color:white' if contact_index%2==0 else 'background-color:#c9e4f6'">
-								<td style="padding-right:4px">
-									<t t-esc="1+contact_index"/> -
-								</td>
-								
-								<td style="white-space: nowrap">
-									<t t-esc="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
-								</td>
-								
-								<td>
-								
-									<ul>
-										<t t-foreach="keys" t-as="key">
-											<t t-if="key in contact.fields_get()">
-												<li t-if="contact[key]">
-													<t t-esc="contact[key]"/>
-												</li>
-											</t>
-										</t>
-									</ul>
-									
-								</td>
-							</tr>
-							
-						</t>
-					</tbody>
-				</table>
-			</div>
-					
-			<div class="footer text-center">
-				<div t-if="report_type == 'pdf'">
-					Page : <span class="page"/> on <span class="topage"/>
-				</div>
-			</div>
-			
-		</t>
-	</template>
-	
 </odoo>

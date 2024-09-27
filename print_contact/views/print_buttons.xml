@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 
 <odoo>
-	<record id="buttons" model="ir.ui.view">
-		<field name="name">Boutons pour les différentes listes</field>
+	<record id="view_partner_form" model="ir.ui.view">
+		<field name="name">Buttons for differents lists</field>
 		<field name="model">res.partner</field>
 		<field name="inherit_id" ref="base.view_partner_form"/>
 		<field name="arch" type="xml">
 
 			<xpath expr="//sheet" position="before">
 				<header>
-					<button name="print_page" string="Full Page" type="object"/>
+					<button name="print_page" string="Full page" type="object"/>
 					<button name="print_listing" string="List of contacts" type="object"/>
-					<button name="print_checkin" string="Check-in Contacts" type="object"/>
+					<button name="print_checkin" string="Check-in contacts" type="object"/>
 				</header>
 			</xpath>
 

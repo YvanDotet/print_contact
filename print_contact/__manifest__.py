@@ -5,7 +5,7 @@
         'author':'Yvan Dotet',
         'depends':['base','contacts'],
         'application':False,        
-        'version':'17.0.0.1',
+        'version':'18.0.0.1',
         'license':'AGPL-3',
         'support': 'yvandotet@yahoo.fr',
         'website':'https://github.com/YvanDotet/print_contact',

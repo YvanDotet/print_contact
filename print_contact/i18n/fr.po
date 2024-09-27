@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 22:23+0000\n"
-"PO-Revision-Date: 2024-01-03 22:23+0000\n"
+"POT-Creation-Date: 2024-09-27 21:57+0000\n"
+"PO-Revision-Date: 2024-09-27 21:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,12 +28,8 @@ msgid "Address"
 msgstr "Adresse"
 
 #. module: print_contact
-#: model_terms:ir.ui.view,arch_db:print_contact.buttons
-msgid "Check-in Contacts"
-msgstr ""
-
-#. module: print_contact
 #: model:ir.actions.report,name:print_contact.action_report_checkin
+#: model_terms:ir.ui.view,arch_db:print_contact.view_partner_form
 msgid "Check-in contacts"
 msgstr ""
 
@@ -51,13 +47,13 @@ msgstr ""
 
 #. module: print_contact
 #: model:ir.actions.report,name:print_contact.action_report_page
-#: model_terms:ir.ui.view,arch_db:print_contact.buttons
-msgid "Full Page"
+#: model_terms:ir.ui.view,arch_db:print_contact.view_partner_form
+msgid "Full page"
 msgstr "Page complète"
 
 #. module: print_contact
 #: model:ir.actions.report,name:print_contact.action_report_listing
-#: model_terms:ir.ui.view,arch_db:print_contact.buttons
+#: model_terms:ir.ui.view,arch_db:print_contact.view_partner_form
 msgid "List of contacts"
 msgstr "Liste de contacts"
 
@@ -91,7 +87,7 @@ msgstr "Téléphone :"
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
 msgid "Print the"
-msgstr "Imprimer le"
+msgstr "Imprimé le"
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
