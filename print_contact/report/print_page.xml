@@ -29,10 +29,6 @@
 
 								<td>
 									<ul style="list-style:none;white-space: nowrap">
-										<li t-if="contact.title and contact.company_type=='person'" style="font-size:20px;font-style:italic">
-											<t t-out="contact.title.name"/>
-										</li>
-
 										<li style="font-size:30px;">
 											<t t-out="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
 										</li>
@@ -78,17 +74,17 @@
 
 								<td>
 									<ul style="list-style:square;white-space: nowrap">
-										<li t-if="contact.phone">
-											Phone : <t t-out="contact.phone" />
-										</li>
-
-										<li t-if="contact.mobile">
-											Mobile : <t t-out="contact.mobile"/>
-										</li>
-
-										<li t-if="contact.email">
-											Email : <t t-out="contact.email"/>
-										</li>
+										<t t-foreach="[
+											['phone', 'Phone'],
+											['mobile', 'Mobile'],
+											['email', 'Email']
+										]" t-as="key">
+											<t t-if="key[0] in contact._fields">
+												<li t-if="contact[key[0]]">
+													<t t-out="key[1]"/> : <t t-out="contact[key[0]]"/>
+												</li>
+											</t>
+										</t>
 									</ul>
 								</td>
 							</tr>

@@ -36,10 +36,8 @@
 								<td style="width:80%;font-size:40px">
 									<ul style="list-style:none">
 										<li>
-											<t t-if="contact.company_type=='person'" t-out="contact.title.name"/> <t t-out="contact.name"/>
+											<t t-out="contact.name"/> <t t-if="contact.company_type=='company'">( Company )</t>
 										</li>
-
-										<li t-if="contact.company_type=='company'">( Company )</li>
 									</ul>
 
 								</td>

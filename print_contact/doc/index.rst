@@ -8,7 +8,7 @@ Usage
 =====
 Go to "Settings" - Apps without any filters. Type "print_contact" into the search box.
 
-Odoo version 18
+Odoo version 19
 
 Credits
 =======
