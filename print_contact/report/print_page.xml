@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="paperformat_page" model="report.paperformat">
+		<field name="name">Contact Page</field>
+		<field name="default" eval="True"/>
+		<field name="format">A4</field>
+		<field name="orientation">Landscape</field>
+		<field name="margin_top">7</field>
+		<field name="margin_bottom">28</field>
+		<field name="margin_left">7</field>
+		<field name="margin_right">7</field>
+		<field name="header_line" eval="False"/>
+		<field name="header_spacing">7</field>
+		<field name="dpi">90</field>
+	</record>
+
+	<template id="page">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="contact">
+				<div class="header"/>
+
+				<div class="article">
+					<div class="page">
+						<table>
+							<tr>
+								<td>
+									<span t-field="contact.image_1920" t-options="{'widget':'image'}" style="opacity:1"/>
+								</td>
+
+								<td>
+									<ul style="list-style:none;white-space: nowrap">
+										<li style="font-size:30px;">
+											<t t-out="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+
+						<hr style="background:black;height:4px"/>
+
+
+						<table style="font-size:30px">
+							<tr>
+								<td style="border-right:1px solid">
+									Address
+								</td>
+
+								<td>
+									<ul style="list-style:none;white-space: nowrap">
+										<li t-if="contact.street">
+											<t t-out="contact.street"/>
+										</li>
+
+										<li t-if="contact.street2">
+											<t t-out="contact.street2"/>
+										</li>
+
+										<li t-if="contact.city or contact.zip">
+											<t t-out="contact.city"/>, <t t-out="contact.zip"/>
+										</li>
+
+										<li t-if="contact.country_id">
+											<t t-out="contact.country_id.name"/>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
+
+						<table style="font-size:30px">
+							<tr>
+								<td>Contact</td>
+
+								<td>
+									<ul style="list-style:square;white-space: nowrap">
+										<t t-foreach="[
+											['phone', 'Phone'],
+											['mobile', 'Mobile'],
+											['email', 'Email']
+										]" t-as="key">
+											<t t-if="key[0] in contact._fields">
+												<li t-if="contact[key[0]]">
+													<t t-out="key[1]"/> : <t t-out="contact[key[0]]"/>
+												</li>
+											</t>
+										</t>
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="footer text-center">
+					<div t-if="report_type == 'pdf'">
+						Page : <t t-out="1+contact_index"/> on <t t-out="len(docs)"/>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+
+	<record id="action_report_page" model="ir.actions.report">
+        <field name="name">Full page</field>
+        <field name="model">res.partner</field>
+        <field name="report_name">print_contact.page</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="paperformat_id" ref="print_contact.paperformat_page"/>
+		<field name="binding_model_id" ref="base.model_res_partner"/>
+    </record>
+</odoo>
