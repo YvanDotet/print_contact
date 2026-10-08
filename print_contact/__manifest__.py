@@ -1,7 +1,7 @@
 {
         'name':'Printing of contacts',
         'description':'Provide contacts pdfs reports',
-        'summary':'Many PDFs available for provide contacts reports.',
+        'summary': "Print contact, print partner, print client, pdf contact, pdf partner, pdf client, ...",
         'author':'Yvan Dotet',
         'depends':['base','contacts'],
         'application':False,        
