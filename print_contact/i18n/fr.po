@@ -106,4 +106,4 @@ msgstr "par"
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.page
 msgid "on"
-msgstr "le"
+msgstr "sur"
