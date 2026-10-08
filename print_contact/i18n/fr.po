@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0\n"
+"Project-Id-Version: Odoo Server 20.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 22:07+0000\n"
-"PO-Revision-Date: 2025-10-07 22:07+0000\n"
+"POT-Creation-Date: 2026-10-08 16:04+0000\n"
+"PO-Revision-Date: 2026-10-08 16:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Adresse"
 #. module: print_contact
 #: model:ir.actions.report,name:print_contact.action_report_checkin
 msgid "Check-in contacts"
-msgstr ""
+msgstr "Check-in de contacts"
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
@@ -49,9 +49,20 @@ msgid "List of contacts"
 msgstr "Liste de contacts"
 
 #. module: print_contact
+#: model:ir.module.module,summary:base.module_print_contact
+msgid "Many PDFs available for provide contacts reports."
+msgstr ""
+"De nombreux PDF disponibles pour fournir des rapports sur les contacts."
+
+#. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
 msgid "Name"
 msgstr "Nom"
+
+#. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "N°"
+msgstr ""
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.page
@@ -67,8 +78,18 @@ msgstr "Page : <span class=\"page\"/> sur <span class=\"topage\"/>"
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
-msgid "Print the"
+msgid "Printed the"
 msgstr "Imprimé le"
+
+#. module: print_contact
+#: model:ir.module.module,shortdesc:base.module_print_contact
+msgid "Printing Contacts PDF"
+msgstr ""
+
+#. module: print_contact
+#: model:ir.module.module,description:base.module_print_contact
+msgid "Provide contacts pdfs reports"
+msgstr "Fourni de nombreux PDF disponibles sur les contacts"
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
