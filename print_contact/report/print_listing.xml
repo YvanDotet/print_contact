@@ -5,8 +5,8 @@
 		<field name="default" eval="True"/>
 		<field name="format">A4</field>
 		<field name="orientation">Portrait</field>
-		<field name="margin_top">7</field>
-		<field name="margin_bottom">28</field>
+		<field name="margin_top">10</field>
+		<field name="margin_bottom">10</field>
 		<field name="margin_left">7</field>
 		<field name="margin_right">7</field>
 		<field name="header_line" eval="False"/>
@@ -27,10 +27,10 @@
 			<div class="article">
 				<div class="page">
 					<div style="text-align:right">
-						Print the <t t-out="dateImpression['day']"/> by <t t-out="dateImpression['author']"/>
+						Printed the <t t-out="dateImpression['day']"/> by <t t-out="dateImpression['author']"/>
 					</div>
 
-					<table style="width:100%">
+					<table class="table table-borderless" style="width:100%">
 						<thead>
 							<tr style="border-bottom:4px double black">
 								<th>N°</th>
@@ -47,7 +47,7 @@
 									</td>
 
 									<td style="white-space: nowrap">
-										<t t-out="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
+										<t t-out="contact.name"/> <t t-if="contact.is_company"> ( Company ) </t>
 									</td>
 
 									<td>

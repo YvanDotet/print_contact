@@ -5,8 +5,8 @@
 		<field name="default" eval="True"/>
 		<field name="format">A4</field>
 		<field name="orientation">Landscape</field>
-		<field name="margin_top">7</field>
-		<field name="margin_bottom">28</field>
+		<field name="margin_top">10</field>
+		<field name="margin_bottom">10</field>
 		<field name="margin_left">7</field>
 		<field name="margin_right">7</field>
 		<field name="header_line" eval="False"/>
@@ -21,7 +21,7 @@
 
 				<div class="article">
 					<div class="page">
-						<table>
+						<table class="table table-borderless">
 							<tr>
 								<td>
 									<span t-field="contact.image_1920" t-options="{'widget':'image'}" style="opacity:1"/>
@@ -30,7 +30,7 @@
 								<td>
 									<ul style="list-style:none;white-space: nowrap">
 										<li style="font-size:30px;">
-											<t t-out="contact.name"/> <t t-if="contact.company_type=='company'"> ( Company ) </t>
+											<t t-out="contact.name"/> <t t-if="contact.is_company"> ( Company ) </t>
 										</li>
 									</ul>
 								</td>
@@ -40,7 +40,7 @@
 						<hr style="background:black;height:4px"/>
 
 
-						<table style="font-size:30px">
+						<table class="table table-borderless" style="font-size:30px">
 							<tr>
 								<td style="border-right:1px solid">
 									Address
@@ -68,7 +68,7 @@
 							</tr>
 						</table>
 
-						<table style="font-size:30px">
+						<table class="table table-borderless" style="font-size:30px">
 							<tr>
 								<td>Contact</td>
 

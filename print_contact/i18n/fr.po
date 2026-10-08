@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 19.0\n"
+"Project-Id-Version: Odoo Server 20.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-07 22:07+0000\n"
-"PO-Revision-Date: 2025-10-07 22:07+0000\n"
+"POT-Creation-Date: 2026-10-08 17:17+0000\n"
+"PO-Revision-Date: 2026-10-08 17:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Adresse"
 #. module: print_contact
 #: model:ir.actions.report,name:print_contact.action_report_checkin
 msgid "Check-in contacts"
-msgstr ""
+msgstr "Check-in de contacts"
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
@@ -54,6 +54,11 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: print_contact
+#: model_terms:ir.ui.view,arch_db:print_contact.listing
+msgid "N°"
+msgstr ""
+
+#. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.page
 msgid "Page :"
 msgstr ""
@@ -65,10 +70,27 @@ msgid "Page : <span class=\"page\"/> on <span class=\"topage\"/>"
 msgstr "Page : <span class=\"page\"/> sur <span class=\"topage\"/>"
 
 #. module: print_contact
+#: model:ir.module.module,summary:base.module_print_contact
+msgid ""
+"Print contact, print partner, print client, pdf contact, pdf partner, pdf "
+"client, ..."
+msgstr ""
+
+#. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
 #: model_terms:ir.ui.view,arch_db:print_contact.listing
-msgid "Print the"
+msgid "Printed the"
 msgstr "Imprimé le"
+
+#. module: print_contact
+#: model:ir.module.module,shortdesc:base.module_print_contact
+msgid "Printing Contacts PDF"
+msgstr ""
+
+#. module: print_contact
+#: model:ir.module.module,description:base.module_print_contact
+msgid "Provide contacts pdfs reports"
+msgstr "Fourni de nombreux PDF disponibles sur les contacts"
 
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.checkin
@@ -84,4 +106,4 @@ msgstr "par"
 #. module: print_contact
 #: model_terms:ir.ui.view,arch_db:print_contact.page
 msgid "on"
-msgstr "le"
+msgstr "sur"
